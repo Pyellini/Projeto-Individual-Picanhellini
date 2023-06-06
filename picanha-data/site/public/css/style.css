@@ -1,0 +1,54 @@
+.fundo{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../background_home.avif);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    text-align: center;
+  
+    
+}
+@font-face {
+    font-family: HammersmithOne-Regular;
+    src: url(../font/HammersmithOne-Regular.ttf);
+}
+@font-face {
+    font-family: solway-bold;
+    src: url(../font/Solway-Bold.ttf);
+}
+.fonte{
+font-family: HammersmithOne-Regular;
+
+}
+
+.fundo2{
+    margin-top: 0px;
+background-color: #FFFAFA;
+        width: 100%;
+        height: 100vh;
+}
+.fundo3{
+    margin-top: 0px;
+background-color: #FFFAFA;
+        width: 100%;
+        height: 100vh;
+}
+.fundol{
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    text-align: center;
+  
+}
+.fundoc{
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    text-align: center;
+  
+}

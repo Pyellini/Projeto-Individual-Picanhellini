@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Picanhellini`s </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+
+</head>
+
+<body>
+    <div class="fonte">
+        <div class="fundoP">
+            <div class="header">
+                <div class="container">
+
+
+
+                    <ul class="navbar"> 
+                        <li>
+                            <a href="./dashboard.html" class="aD">Suas estatisticas</a>
+                        </li>
+                        <li>
+                            <a href="./" class="aD">Duvidas</a>
+                        </li>
+
+                        <li>
+                            <a href="./receitas.html" class="a">Receitas</a>
+                        </li>
+                        <li>
+                            <a href="./calculadora_pi.html" class="a">Quiz</a>
+                        </li>
+                        <li>
+                            <a href="./perfil_user.html" class="a">Perfil</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="barra"></div>
+        <div id="containter3">
+             
+            <div class="container2">
+
+                <span id="esc">
+                Bem vindo,<br>
+                <span id="b_usuario"> 
+                    usuario
+                </span>!
+                </span>
+        <div class="banner">
+                <div  onclick="dash()" class="caixa">
+                    <p class="texto_caixa">Suas respostas</p>
+                </div>
+                
+        </div>           
+            </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+function dash(){
+    href="./perfil_user.html"
+    window.location.href = "./dash.html"; 
+}
+</script>

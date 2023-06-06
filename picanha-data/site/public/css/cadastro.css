@@ -1,0 +1,181 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    
+
+}
+
+    .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    margin-top: 0px;
+    
+  }
+
+  .barra{
+    border-top:rgb(255, 255, 255) solid 3px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 50px;
+  }
+
+  .header a {
+    font-size:35px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+  align-items: end;
+  display: flex;
+  }
+
+  a:hover {
+    opacity: 0.7;
+    font-size: 30px;
+  }
+  
+  .paginaSelecionada {
+    font-weight: 800;
+  }
+  
+  .navbar {
+    width: 500px;
+    display: flex;
+    margin-right: 200px;
+    justify-content: space-between;
+    list-style: none;
+    color: #ffffff;
+    
+  }
+  
+  #name{
+    margin-left: 150px;
+    margin-bottom: 12px;
+  }   
+.fundoc {
+    background-color: #54290b;
+    width: 100%;
+    background-size: cover;
+    height: 1200;
+
+}
+
+
+.container2 {
+    display: flex;
+margin-bottom: 50px;
+    background-color: rgb(253, 253, 253);
+    height: 900px;
+    width: 1700px;
+    margin-left: 100px;
+
+    box-shadow: 0px 10px 40px black;
+}
+
+.caixa2 {
+    background-color: black;
+    width: 10000px;
+    height: 880px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: large;
+    display: flex;
+}
+
+.caixa {
+
+    background-color: rgb(253, 253, 253);
+    height: 850px;
+    width: 850px;
+
+}
+
+
+.campo {
+    margin-right: 150px;
+    margin-left: 100px;
+    width: 600px;
+    height: 39px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: large;
+
+
+}
+
+.nome {
+    margin: flex;
+    margin-top: 20px;
+    font-size: 30px;
+    margin-right: 540px;
+}
+
+.nomeT {
+    margin: flex;
+    margin-top: 20px;
+    font-size: 30px;
+    margin-right: 510px;
+}
+h2 {
+    font-family: HammersmithOne-Regular;
+    margin-top: 10px;
+    font-size: 40px;
+    margin: center;
+}
+
+.btn_entrar,
+.btn_criar {
+    margin-left: 270px;
+    background-color: #915417;
+    color: rgb(223, 223, 223);
+    font-weight: bold;
+    font-family: HammersmithOne-Regular;
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    border: none;
+    font-size: .9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+
+}
+
+.nomec{
+    margin: flex;
+    margin-top: 20px;
+    font-size: 30px;
+    margin-right: 290px;
+
+}
+#Lbutton{
+    font-size: 30px;
+}
+
+.campoA{
+    margin-left: 180px;
+margin-top: 70px;
+width: 500px;
+height: 100px;
+border-radius: 15px;
+border: 4px solid black;
+display: flex;
+}
+#tokeApa{
+font-size: 50px;
+padding-left: 12.5vh;
+    padding-top: 1.8vh;
+}

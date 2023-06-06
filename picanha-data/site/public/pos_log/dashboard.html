@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Picanhellini`s </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dash.css">
+
+</head>
+
+<body>
+    <div class="fonte">
+        <div class="fundoP">
+            <div class="header">
+                <div class="container">
+
+
+
+                    <ul class="navbar">
+                      <li>
+                        <a href="./dashboard.html" class="aD">Suas estatisticas</a>
+                    </li>
+                        <li>
+                            <a href="./" class="aD">Duvidas</a>
+                        </li>
+
+                        <li>
+                            <a href="./receitas.html" class="a">Receitas</a>
+                        </li>
+                        <li>
+                            <a href="./calculadora_pi.html" class="a">Quiz</a>
+                        </li>
+                        <li>
+                            <a href="./perfil_user.html" class="a">Perfil</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="barra"></div>
+        <div class="pai">
+          <div class="bloco1">
+            <div class="dash_like">
+                <canvas id="myChart"></canvas>
+              </div>
+
+
+              <button class="btn_voto">Picanha</button>
+              <button class="btn_voto">Costela de Boi</button>
+              <button class="btn_voto">Acem</button>
+              <button class="btn_voto">Pão de Alho</button>
+              <button class="btn_voto">Cupim</button>
+              <button class="btn_voto">Abacaxi</button>
+            </div>
+            <div class="bloco2">
+
+              <div class="dash_vizu">
+                <canvas id="myChart2"></canvas>
+              </div>
+
+              <div class="dash_vizuL">
+                <canvas id="myChart3"></canvas>
+              </div>
+            </div>
+
+            </div>
+      </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Picanha', 'Costela de Boi', 'Acem', 'Pão de alho', 'Cupim', 'Abacaxi'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx2 = document.getElementById('myChart2');
+  
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Picanha', 'Costela de Boi', 'Cupim', 'Tbone'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx3 = document.getElementById('myChart3');
+  
+  new Chart(ctx3, {
+    type: 'line',
+    data: {
+      labels: ['Mal Passado', 'Ao Ponto', 'Bem Passado'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+  </script>
+

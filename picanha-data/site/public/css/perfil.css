@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+
+
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 0px;
+padding-left: 300px;
+}
+
+.barra {
+    border-top:#371f09 solid 3px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 100px;
+}
+
+.header a {
+    font-size: 35px;
+    text-decoration: none;
+    color: #371f09;
+    transition: 0.3s;
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+a:hover {
+    opacity: 0.7;
+    font-size: 30px;
+}
+
+.paginaSelecionada {
+    font-weight: 800;
+}
+
+.navbar {
+    width: 800px;
+    
+    display: flex;
+    margin-left: 600px;
+    justify-content: space-between;
+    list-style: none;
+    color: #ffffff;
+
+}
+
+#name {
+    margin-left: 150px;
+}
+
+.fundoP {
+    background-color: #fef7f2;
+    width: 100%;
+    background-size: cover;
+    height: 1100px;
+
+}
+
+.aD{
+    font-size: 35px;
+    text-decoration: none;
+    color: #371f09;
+    transition: 0.3s;
+    align-items: end;
+    display: flex;
+    
+    
+}
+.containter3{
+    display: flex;
+}
+.container2{
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 300px;
+    
+}
+
+.caixa{
+    
+    width: 400px;
+    height: 650px;
+    background-color: black;
+}
+.caixa2{
+     margin-left: 100px;
+    width: 400px;
+    height: 650px;
+    background-color: black;
+}
+#esc{
+    margin-bottom: 100px;
+    margin-left: -300px;
+    font-size: 100px;
+}
+
+.banner{
+margin-left: 200px;
+    display: flex;
+}
+.texto_caixa {
+    margin-left:15px;
+    margin-top: 440px;
+    color: #ffffff;
+    font-size: 80px;
+}
+
+.texto_caixaP {
+    margin-top: 540px;
+    color: #ffffff;
+    font-size: 80px;
+    margin-left: 15px;
+}
+
+.caixa:hover{
+    width: 450px;
+    height: 690px;
+    opacity: 0.7;
+    transition-property: none ;
+}
+

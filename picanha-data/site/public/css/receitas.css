@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+
+
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 0px;
+
+}
+
+.barra {
+    border-top:#371f09 solid 3px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 0px;
+}
+
+.header a {
+    font-size: 35px;
+    text-decoration: none;
+    color: #371f09;
+    transition: 0.3s;
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+a:hover {
+    opacity: 0.7;
+    font-size: 30px;
+}
+
+.paginaSelecionada {
+    font-weight: 800;
+}
+
+.navbar {
+    width: 800px;
+    
+    display: flex;
+    margin-left: 25px;
+    justify-content: space-between;
+    list-style: none;
+    color: #ffffff;
+    padding-right: 180px;
+
+}
+
+#name {
+    margin-left: 150px;
+}
+
+.fundoP {
+    background-color: #fef7f2;
+    width: 100%;
+    background-size: cover;
+    height: 1100px;
+
+}
+
+.a{
+    font-size: 35px;
+    text-decoration: none;
+    color: #371f09;
+    transition: 0.3s;
+    align-items: end;
+    display: flex;
+    
+    
+}
+.containter3{
+    background-color: #fef7f2;
+    height: 1050px;
+    display: flex;
+}
+
+.tipos{
+    display: none;
+    width: 400px;
+background-color: #371f09;
+
+}
+#mostrar{
+    
+width: 50px;
+height: 50px;
+
+}
+#Tittle{
+    padding-left: 40px;
+    color: #ffffff;
+    margin: center;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#Tcarnes{
+    padding-left: 40px;
+    color: #ffffff;
+    margin: center;
+    font-size: 34px;
+    padding-right: 150px;
+    
+}
+#Pontos{
+    padding-left: 40px;
+    color: #ffffff;
+    margin: center;
+    font-size: 34px;
+    padding-right: 50px;
+
+}
+#Como{
+    padding-left: 40px;
+    color: #ffffff;
+    margin: center;
+    font-size: 34px;
+    padding-right: 50px;
+    
+}
+#pratos{
+    padding-left: 40px;
+    color: #ffffff;
+    margin: center;
+    font-size: 34px;
+    padding-right: 34px;
+ 
+}
+
+.aC{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 250px;
+    margin-left: 10px;
+}
+.aCp{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 300px;
+    margin-left: 10px;
+}
+.aCt{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 250px;
+    margin-left: 10px;
+}
+
+.aCU{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 800px;
+    margin-right: 200px;
+    margin-left: 10px;
+}
+
+.aCc{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 200px;
+    margin-left: 10px;
+}
+
+.aCM{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 300px;
+    margin-left: 10px;
+}
+
+.aCA{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 320px;
+    margin-left: 10px;
+}
+
+
+.aCB{
+    font-family: HammersmithOne;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 400px;
+    margin-left: 10px;
+}
+
+
+.videosL1{
+    height: 350px;
+    width: 600px;
+    margin-top: 100px;
+    padding-left: 150px;
+    border-radius: 30px 30px 30px 30px;}
+.videosL2{
+    border-radius: 30px 30px 30px 30px;
+        height: 350px;
+    width: 600px;
+    margin-top: 100px;
+    padding-left: 150px;
+}

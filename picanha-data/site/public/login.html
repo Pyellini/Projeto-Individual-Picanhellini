@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Login | Picanhellini's </title>
+    <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/login.css">
+
+</head>
+
+<body>
+    <div class="fonte">
+        <div class="fundol">
+            <div class="header">
+                <div class="container">
+
+                        <a id="name" href="./index.html">PICANHELLINI`S</a>
+                    
+                    <ul class="navbar">
+                        
+                        <li>
+                            <a href="./login.html" class="a">LOGIN</a>
+                        </li>
+                        <li>
+                            <a href="./cadastro.html" class="a">CADASTRO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="barra"></div>
+            
+            <div class="caixa"><br>
+
+                <h2>
+                    LOGIN
+                </h2>
+
+                <span class="nome">
+                    E-mail:
+                </span>
+
+                <input type="text" placeholder="Email" id="email_input" class="campo">
+                 <br>
+
+               <span class="nomeT">
+                 Token de acesso
+                </span>
+
+                <input type="password" placeholder="Senha" id="senha_input" class="campo"><br><br>
+
+                <button  class="btn_entrar" onclick="entrar()">ENTRAR</button>
+        </div>
+
+
+
+        <div id="div_erros_login"></div>
+
+        </div>
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+     
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            alert("(Mensagem de erro para todos os campos em branco)");
+         
+            return false;
+        }
+       
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.Nome;
+                    sessionStorage.ID_USUARIO = json.idCadastro;
+
+                    setTimeout(function () {
+                        window.location = "./pos_log/perfil_user.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+
+</script>

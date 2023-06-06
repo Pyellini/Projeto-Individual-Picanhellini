@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Picanhellini`s </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/receitas.css">
+
+</head>
+
+<body>
+    <div class="fonte">
+        <div class="fundoP">
+            <div class="header">
+
+                <div class="container">
+                    <a id="mostrar">Mostrar</a>
+                    <ul class="navbar">
+                        <li>
+                            <a href="./dashboard.html" class="aD">Suas estatisticas</a>
+                        </li>
+                        <li>
+                            <a href="./" class="aD">Duvidas</a>
+                        </li>
+
+                        <li>
+                            <a href="./receitas.html" class="a">Receitas</a>
+                        </li>
+                        <li>
+                            <a href="./calculadora_pi.html" class="a">Quiz</a>
+                        </li>
+                        <li>
+                            <a href="./perfil_user.html" class="a">Perfil</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="barra"></div>
+            <div class="containter3">
+
+                <div class="tipos">
+                    <div id="Tittle">PicanhaTube</div>
+
+                    <div id="Tcarnes">TIPOS DE CARNE</div>
+                    
+                            <a  onclick="Picanha()" class="aCp">Picanha</a>
+                        
+                      
+                            <a onclick="Tbone()" class="aCt">T-Bone</a>
+                        
+          
+                            <a onclick="Costela()" class="aCc">Costela de boi</a>
+                        
+                
+                            <a onclick="Cupim()" class="aCU">Cupim</a><br><br>
+                        
+
+                    <div id="Pontos">PONTOS DA CARNE</div>
+
+                    <a onclick="mal()" class="aCM"> - Mal Passado</a>
+                        
+                      
+                    <a onclick="ponto()" class="aCA"> - Ao ponto</a>
+                
+  
+                    <a  onclick="bem()" class="aCB"> - Bem Passado</a>
+                
+        
+                    <br><br>
+
+                    <div id="Como">COMO ACENDER A CHURRASQUEIRA</div>
+
+                    <div id="pratos">PRATOS USANDO A CHURRASQUEIRA</div>
+
+                </div>
+                <div id="videos">
+                    <div class="espaco1">
+                        <iframe class="videosL1" src="https://www.youtube.com/embed/TZ7H_epEMDQ" title="5 dicas para o seu churrasco! | Netão! Bom Beef #66" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+                        <iframe class="videosL2" src="https://www.youtube.com/embed/eqO6dGg_8X0" title="Churrasco Barato de Frango | Churrasqueadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br><br><br>
+                    </div>
+                    <div class="espaco2">
+                        <iframe class="videosL1" src="https://www.youtube.com/embed/FGzZ5ExuNTk" title="CHURRASCO VEGANO COMPLETO (Linguiça, Espetinhos, Maionese, Kafta, Legumes, Sobremesa...)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+                        <iframe class="videosL2" src="https://www.youtube.com/embed/bwoBUudGIS0" title="CHURRASCO VEGANO | Receitas Fake News | Rafael Ribas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+                    </div>
+
+
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+var id = sessionStorage.ID_USUARIO;
+
+var pontosPicanha = 0
+var pontosCupim = 0
+var pontosTbone = 0
+var pontosCostela = 0
+
+
+var bemPassado = 0
+var malPassado = 0
+var aoPonto = 0
+var pontos = ` <div class="espaco1">
+                        <iframe class="videosL1" src="https://www.youtube.com/embed/Rx8hr0R1vvA" title="TODOS os Pontos da carne na churrasqueira! | Netão! Bom Beef #146" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+                        <iframe class="videosL2" src="https://www.youtube.com/embed/fU8TdD3_YJY" title="Como Acertar o Ponto da Carne no Churrasco" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br><br><br>
+                    </div>
+                    <div class="espaco2">
+                        <iframe class="videosL1" src="https://www.youtube.com/embed/W1R4V_4RfG0" title="Ponto Menos ou Carne Crua? | Netão! Bom Beef #133" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+                        <iframe class="videosL2" src="https://www.youtube.com/embed/cGqHmGgk5Ww" title="Pontos da Carne I Churrasqueadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+                    </div>`
+
+    var column = document.querySelector('#mostrar');
+    var mostrar = document.querySelector('.tipos');
+
+    column.addEventListener('click', function () {
+        if (mostrar.style.display === "block") {
+            mostrar.style.display = 'none';
+        } else {
+            mostrar.style.display = 'block'
+        }
+    })
+
+function Picanha(){
+pontosPicanha = 1
+
+console.log(pontosPicanha)
+
+videos.innerHTML = `
+<div class="espaco1">
+                <iframe class="videosL1" src="https://www.youtube.com/embed/BJxNl6JUiOA" title="Como fazer Picanha na Frigideira | Netão! Bom Beef #21" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <iframe class="videosL2" src="https://www.youtube.com/embed/L-DTcYqe4nI" title="A Picanha Perfeita - 3 Maneiras I Churrasqueadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br><br><br>
+            </div>
+            <div class="espaco2">
+                <iframe class="videosL1" src="https://www.youtube.com/embed/nUELx2n8bl4" title="Tudo sobre Picanha (Part. Netão) I Churrasqueadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <iframe class="videosL2"src="https://www.youtube.com/embed/m5ywqLd1rUQ" title="Como fazer Picanha na churrasqueira ELÉTRICA! | Netão! Bom Beef #80" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </div>
+`
+  // Enviando o valor da nova input
+  fetch("/usuarios/picanha", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                PicanhaServer: pontosPicanha
+             
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+}
+
+
+function Tbone(){
+    pontosTbone=1
+
+    videos.innerHTML = `
+<div class="espaco1">
+                <iframe class="videosL1" src="https://www.youtube.com/embed/ksOvf0EWtis" title="T-Bone – Bisteca alla Fiorentina e Portherhouse! | Netão! Bom Beef #8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <iframe class="videosL2" src="https://www.youtube.com/embed/WIi1Wb6vmDA" title="Porterhouse o T-Bone?  | La Capital" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br><br><br>
+            </div>
+            <div class="espaco2">
+                <iframe class="videosL1" src="https://www.youtube.com/embed/GhG-UPdSPaw" title="The BEST Way To Cook T Bone Steak PERFECTLY! Reverse Sear T Bone Steak Recipe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe>
+
+                <iframe class="videosL2" src="https://www.youtube.com/embed/kbpIYAnt-7k" title="How To Make Pan Seared Butter-Basted Steak" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </div>
+`
+
+fetch("/usuarios/Tbone", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                TboneServer: pontosTbone
+             
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+}
+
+function Costela(){
+    pontosCostela= 1
+
+    videos.innerHTML = `
+<div class="espaco1">
+                <iframe class="videosL1"  src="https://www.youtube.com/embed/tzLB91i65IM" title="Tudo sobre COSTELA! | Netão! Bom Beef #154" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <iframe class="videosL2" src="https://www.youtube.com/embed/EHIy8IOZSpw" title="Como fazer Costela na Churrasqueira Convencional | Netão! Bom Beef #25" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br><br><br>
+            </div>
+            <div class="espaco2">
+                <iframe class="videosL1"  src="https://www.youtube.com/embed/LR6D4wD5-Vg" title="Costela no BAFO com Cerveja, Aioli de Tutano e Chimichurri! | Netão! Bom Beef #149" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <iframe class="videosL2" src="https://www.youtube.com/embed/6FEYDJhcxCI" title="IMPERDÍVEL: CHURRASCÃO DE COSTELA DO DIANTEIRO INTEIRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </div>
+`
+
+
+fetch("/usuarios/Costela", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                CostelaServer: pontosCostela
+             
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+}
+
+function Cupim(){
+    pontosCupim = 1
+
+    videos.innerHTML = `
+<div class="espaco1">
+                <iframe class="videosL1"s src="https://www.youtube.com/embed/_BW2khbp3y0" title="Cupim na Churrasqueira com Manteiga | Netão! Bom Beef #61" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <iframe class="videosL2" src="https://www.youtube.com/embed/oozfbXjIn8M" title="Como fazer cupim na churrasqueira, desmanchando" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br><br><br>
+            </div>
+            <div class="espaco2">
+                <iframe class="videosL1" src="https://www.youtube.com/embed/1vjwI2aFLaw" title="Cupim na Brasa I Churrasqueadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <iframe class="videosL2" src="https://www.youtube.com/embed/TYkkhm6kszU" title="Cupim no celofane na churrasqueira: aprenda a fazer um cupim suculento e macio com esta receita" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </div>
+`
+fetch("/usuarios/Cupim", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                CupimServer: pontosCupim
+             
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+}
+
+function mal(){
+    malPassado= 1
+    console.log(malPassado)
+    videos.innerHTML = pontos
+
+    fetch("/usuarios/mal", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                MalServer: malPassado
+             
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+}
+
+function bem(){
+    bemPassado= 1
+    console.log(bemPassado)
+videos.innerHTML = pontos
+
+fetch("/usuarios/bem", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                BemServer: bemPassado
+             
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+}
+
+function ponto(){
+    aoPonto= 1
+    console.log(aoPonto)
+videos.innerHTML = pontos
+
+
+fetch("/usuarios/ponto", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                PontoServer: aoPonto
+             
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+}
+
+
+
+
+</script>
