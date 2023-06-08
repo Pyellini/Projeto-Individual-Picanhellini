@@ -521,7 +521,7 @@ function LikeAbacaxi(req, res) {
     else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.LikeCupim(id, ponto)
+        usuarioModel.LikeAbacaxi(id, ponto)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -547,5 +547,5 @@ module.exports = {
     Tbone,Costela,Cupim,
     mal,bem,ponto,
 
-    LikePicanha,LikeCostela,LikeAcem,LikePao,LikeCupim,LikeAbacaxi
+    LikePicanha,LikeCostela,LikeAcem,LikePao,LikeCupim,LikeAbacaxi,
 }

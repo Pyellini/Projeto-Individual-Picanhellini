@@ -29,11 +29,11 @@ function cadastrar(nome, email, telefone, token) {
     return database.executar(instrucao);
 }
 
-function Picanha(id, Picanha) {    
+function Picanha(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO videos (Picanha, fkUser) VALUES (${Picanha}, ${id});
+        INSERT INTO videos (video, num ,fkUser) VALUES ('picanha', 1,${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -41,61 +41,61 @@ function Picanha(id, Picanha) {
 
 
 
-function Tbone(id, Tbone) {    
+function Tbone(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO videos (Tbone, fkUser) VALUES (${Tbone}, ${id});
+        INSERT INTO videos (video, num ,fkUser) VALUES ('tbone', 1,${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function Costela(id, Costela) {    
+function Costela(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO videos (Costela, fkUser) VALUES (${Costela}, ${id});
+        INSERT INTO videos (video, num ,fkUser) VALUES ('costela',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function Cupim(id, Cupim) {    
+function Cupim(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO videos (Cupim, fkUser) VALUES (${Cupim}, ${id});
+        INSERT INTO videos (video,num , fkUser) VALUES ('cupim',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function mal(id, mal) {    
+function mal(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO videos (MalPassado, fkUser) VALUES (${mal}, ${id});
+        INSERT INTO pontos (video,num ,fkUserPontos) VALUES ('mal passado',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function bem(id, bem) {    
+function bem(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO videos (BemPassado, fkUser) VALUES (${bem}, ${id});
+        INSERT INTO pontos (video,num , fkUserPontos) VALUES ('bem passado',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function ponto(id, ponto) {    
+function ponto(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO videos (AoPonto, fkUser) VALUES (${ponto}, ${id});
+        INSERT INTO pontos (video,num , fkUserPontos) VALUES ('ao ponto',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -106,64 +106,64 @@ function ponto(id, ponto) {
 
 
 
-function LikePicanha(id, ponto) {    
+function LikePicanha(id ) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO likes (LikePicanha, fkUsuario) VALUES (${ponto}, ${id});
+        INSERT INTO likes1 (carnes ,num , fkUsuarioLike) VALUES ('picanha',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 
-function LikeCostela(id, ponto) {    
+function LikeCostela(id ) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO likes (LikeCostela, fkUsuario) VALUES (${ponto}, ${id});
+        INSERT INTO likes1 (carnes, num ,fkUsuarioLike) VALUES ('costela',1 ,${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 
-function LikeAcem(id, ponto) {    
+function LikeAcem(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO likes (LikeAcem, fkUsuario) VALUES (${ponto}, ${id});
+        INSERT INTO likes1 (carnes,num , fkUsuarioLike) VALUES ('acem',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 
-function LikePao(id, ponto) {    
+function LikePao(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO likes (LikePao, fkUsuario) VALUES (${ponto}, ${id});
+        INSERT INTO likes1 (carnes,num , fkUsuarioLike) VALUES ('pao de alho',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function LikeCupim(id, ponto) {    
+function LikeCupim(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO likes (LikeCupim, fkUsuario) VALUES (${ponto}, ${id});
+        INSERT INTO likes1 (carnes, num ,fkUsuarioLike) VALUES ('cupim',1, ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function LikeAbacaxi(id, ponto) {    
+function LikeAbacaxi(id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO likes (LikeAbacaxi, fkUsuario) VALUES (${ponto}, ${id});
+        INSERT INTO likes1 (carnes, num , fkUsuarioLike) VALUES ('abacaxi', 1 , ${id});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
