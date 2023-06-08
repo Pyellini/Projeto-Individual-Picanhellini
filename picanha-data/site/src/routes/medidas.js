@@ -12,11 +12,11 @@ router.get("/tempo-real/:id", function (req, res) {
 })
 
 // DASH 2 ---------------------------------------------------------------------------------------------------------------------------------
-router.get("/ultimas/:carneid2", function (req, res) {
+router.get("/ultimas2/:carneid2", function (req, res) {
     medidaController.buscarUltimasMedidas2(req, res);
 });
 
-router.get("/tempo-real/:carneid2", function (req, res) {
+router.get("/tempo-real2/:carneid2", function (req, res) {
     medidaController.buscarMedidasEmTempoReal2(req, res);
 })
 

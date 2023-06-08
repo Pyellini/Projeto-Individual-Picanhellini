@@ -47,7 +47,7 @@ function buscarUltimasMedidas2(req, res) {
 
     const limite_linhas = 7;
 
-    var id2 = req.params.id;
+    var id2 = req.params.id2;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
@@ -67,9 +67,9 @@ function buscarUltimasMedidas2(req, res) {
 
 function buscarMedidasEmTempoReal2(req, res) {
 
-    var id2 = req.params.id;
+    var id2 = req.params.id2;
 
-    console.log(`Recuperando medidas em tempo real`);
+    
 
     medidaModel.buscarMedidasEmTempoReal2(id2).then(function (resultado) {
         if (resultado.length > 0) {
@@ -89,11 +89,7 @@ function buscarMedidasEmTempoReal2(req, res) {
 
 function buscarUltimasMedidas3(req, res) {
 
-    const limite_linhas = 7;
-
-    var id3 = req.params.id;
-
-    console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+    var id3 = req.params.id3;
 
     medidaModel.buscarUltimasMedidas3(id3, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
@@ -111,7 +107,7 @@ function buscarUltimasMedidas3(req, res) {
 
 function buscarMedidasEmTempoReal3(req, res) {
 
-    var id3 = req.params.id;
+    var id3 = req.params.id3;
 
     console.log(`Recuperando medidas em tempo real`);
 

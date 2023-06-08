@@ -484,7 +484,7 @@ function obterDadosGrafico2(id2) {
 
 
 
-fetch(`/medidas/ultimas/carne${id2}`, { cache: 'no-store' }).then(function (response2) {
+fetch(`/medidas/ultimas2/carne${id2}`, { cache: 'no-store' }).then(function (response2) {
     if (response2.ok) {
         response2.json().then(function (resposta2) {
             console.log(`Dados recebidos: ${JSON.stringify(resposta2)}`);
@@ -570,7 +570,7 @@ function atualizarGrafico2(id2, dados2, myChart2) {
 
 
 
-fetch(`/medidas/tempo-real/carne${id2}`, { cache: 'no-store' }).then(function (response) {
+fetch(`/medidas/tempo-real2/carne${id2}`, { cache: 'no-store' }).then(function (response) {
     if (response.ok) {
         response.json().then(function (novoRegistro2) {
 
@@ -580,7 +580,7 @@ fetch(`/medidas/tempo-real/carne${id2}`, { cache: 'no-store' }).then(function (r
             console.log(`Dados atuais do gráfico:`);
             console.log(dados2);
 
-            let avisoCaptura2 = document.getElementById(`avisoCaptura${id2}`)
+  
       
 
 
