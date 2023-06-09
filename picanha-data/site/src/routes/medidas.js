@@ -12,22 +12,22 @@ router.get("/tempo-real/:id", function (req, res) {
 })
 
 // DASH 2 ---------------------------------------------------------------------------------------------------------------------------------
-router.get("/ultimas2/:carneid2", function (req, res) {
+router.get("/ultimas2/:id2", function (req, res) {
     medidaController.buscarUltimasMedidas2(req, res);
 });
 
-router.get("/tempo-real2/:carneid2", function (req, res) {
+router.get("/tempo-real2/:id2", function (req, res) {
     medidaController.buscarMedidasEmTempoReal2(req, res);
 })
 
 
 // DASH 3 ---------------------------------------------------------------------------------------------------------------------------------
 
-router.get("/ultimas/:pontoid3", function (req, res) {
+router.get("/ultimas3/:id3", function (req, res) {
     medidaController.buscarUltimasMedidas3(req, res);
 });
 
-router.get("/tempo-real/:pontoid3", function (req, res) {
+router.get("/tempo-real3/:id3", function (req, res) {
     medidaController.buscarMedidasEmTempoReal3(req, res);
 })
 

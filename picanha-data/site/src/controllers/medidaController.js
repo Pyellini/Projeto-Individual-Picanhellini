@@ -89,9 +89,9 @@ function buscarMedidasEmTempoReal2(req, res) {
 
 function buscarUltimasMedidas3(req, res) {
 
-    var id3 = req.params.id3;
+    var id3 = req.params.id;
 
-    medidaModel.buscarUltimasMedidas3(id3, limite_linhas).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas3(id3).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

@@ -59,7 +59,7 @@
                 <div class="bloco2">
 
                     <div class="dash_vizu">
-                        <canvas id="myChart2"></canvas>
+                        <canvas id="segundo"></canvas>
                     </div>
 
                     <div class="dash_vizuL">
@@ -75,8 +75,8 @@
 <script>
 
     var id = sessionStorage.ID_USUARIO;
-    var id2 = sessionStorage.ID_USUARIO;
-    var id3 = sessionStorage.ID_USUARIO;
+    // var id2 = sessionStorage.ID_USUARIO;
+    // var id3 = sessionStorage.ID_USUARIO;
 
     var curtidasPicanha = 0
     var curtidasCostela = 0
@@ -484,10 +484,10 @@ function obterDadosGrafico2(id2) {
 
 
 
-fetch(`/medidas/ultimas2/carne${id2}`, { cache: 'no-store' }).then(function (response2) {
+fetch(`/medidas/ultimas2/${id2}`, { cache: 'no-store' }).then(function (response2) {
     if (response2.ok) {
         response2.json().then(function (resposta2) {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta2)}`);
+            console.log(`Dados recebidos: grafico 2 ---> ${JSON.stringify(resposta2)}`);
             resposta2.reverse();
 
             plotarGrafico2(resposta2, id2);
@@ -529,7 +529,7 @@ console.log(resposta2)
 // Inserindo valores recebidos em estrutura para plotar o gráfico
 for (i = 0; i < resposta2.length; i++) {
     var registro = resposta2[i];
-    labels2.push(registro.videos);
+            labels2.push(registro.video);
             dados2.datasets[0].data.push(registro.num);
     // dados2.datasets[1].data.push(registro.tbone);
     // dados2.datasets[2].data.push(registro.costela);
@@ -553,7 +553,7 @@ const config2 = {
 
 // Adicionando gráfico criado em div na tela
 let myChart2 = new Chart(
-    document.getElementById(`myChart2`),
+    document.getElementById(`segundo`),
     config2
 );
 
@@ -570,21 +570,21 @@ function atualizarGrafico2(id2, dados2, myChart2) {
 
 
 
-fetch(`/medidas/tempo-real2/carne${id2}`, { cache: 'no-store' }).then(function (response) {
+fetch(`/medidas/tempo-real2/${id2}`, { cache: 'no-store' }).then(function (response) {
     if (response.ok) {
         response.json().then(function (novoRegistro2) {
 
             obterDadosGrafico2(id2);
             // alertar(novoRegistro, idAquario);
-            console.log(`Dados recebidos: ${JSON.stringify(novoRegistro2)}`);
-            console.log(`Dados atuais do gráfico:`);
+            console.log(`Dados recebidos: -- grafico 2 ---- > ${JSON.stringify(novoRegistro2)}`);
+            console.log(`Dados atuais do gráfico 2 :`);
             console.log(dados2);
 
   
       
 
 
-            if (novoRegistro2[0].videos == dados2.labels[dados2.labels.length - 1]) {
+            if (Number(novoRegistro2[0].videos) == Number(dados2.labels2[Number(dados2.labels.length) - 1])) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
                         console.log("Horário do novo dado capturado:")
@@ -595,8 +595,8 @@ fetch(`/medidas/tempo-real2/carne${id2}`, { cache: 'no-store' }).then(function (
                     } else {
                         
 
-                        dados2.labels.shift(); 
-                        dados2.labels.push(novoRegistro2[0].video);
+                        dados2.labels2.shift(); 
+                        dados2.labels2.push(novoRegistro2[0].video);
 
 
                         dados2.datasets[0].data.shift();  // apagar o primeiro de umidade
@@ -680,7 +680,8 @@ fetch(`/medidas/tempo-real2/carne${id2}`, { cache: 'no-store' }).then(function (
 
 
 
-//  ---------------------------------------------- DASH 3 ---------------------------------------------------------------------
+//  ---------------------------------------------- DASH 3 -----------------------------------------------------------
+
 
 
 
@@ -688,10 +689,10 @@ function obterDadosGrafico3(id3) {
 
 
 
-fetch(`/medidas/ultimas/ponto${id3}`, { cache: 'no-store' }).then(function (response3) {
+fetch(`/medidas/ultimas3/${id3}`, { cache: 'no-store' }).then(function (response3) {
     if (response3.ok) {
         response3.json().then(function (resposta3) {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta3)}`);
+            console.log(`Dados recebidos: grafico 2 ---> ${JSON.stringify(resposta3)}`);
             resposta3.reverse();
 
             plotarGrafico3(resposta3, id3);
@@ -706,18 +707,18 @@ fetch(`/medidas/ultimas/ponto${id3}`, { cache: 'no-store' }).then(function (resp
     });
 }
 
-function plotarGrafico3(resposta3, id3) {
+function plotarGrafico3(resposta, id3) {
 
 console.log('iniciando plotagem do gráfico...');
 
 // Criando estrutura para plotar gráfico - labels
-let labels3 = [];
+let labels = [];
 
 // Criando estrutura para plotar gráfico - dados
-let dados3 = {
-    labels: labels3,
+let dados = {
+    labels: labels,
     datasets: [{
-        label: 'Views pontos',
+        label: 'Likes',
         data: [],
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
@@ -727,32 +728,34 @@ let dados3 = {
 };
 
 console.log('----------------------------------------------')
-console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico3":')
-console.log(resposta3)
+console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+console.log(resposta)
 
 // Inserindo valores recebidos em estrutura para plotar o gráfico
-for (i3 = 0; i3 < resposta3.length; i3++) {
-    var registro3 = resposta3[i3];
-    labels3.push(registro3.videos);
-            dados3.datasets[0].data.push(registro3.num);
-    // dados.datasets[1].data.push(registro.tbone);
-    // dados.datasets[2].data.push(registro.costela);
-    // dados.datasets[3].data.push(registro.cupim);
-    
+for (i = 0; i < resposta.length; i++) {
+    var registro = resposta[i];
+    labels.push(registro.video);
+    dados.datasets[0].data.push(registro.num);
+    // dados.datasets[1].data.push(registro.costela);
+    // dados.datasets[2].data.push(registro.cupim);
+    // dados.datasets[3].data.push(registro.acem);
+    // dados.datasets[4].data.push(registro.abacaxi);
+    // dados.datasets[5].data.push(registro.pao);
+
 }
 
 console.log('----------------------------------------------')
 console.log('O gráfico será plotado com os respectivos valores:')
 console.log('Labels:')
-console.log(labels3)
+console.log(labels)
 console.log('Dados:')
-console.log(dados3.datasets)
+console.log(dados.datasets)
 console.log('----------------------------------------------')
 
 // Criando estrutura para plotar gráfico - config
 const config3 = {
     type: 'bar',
-    data: dados3,
+    data: dados,
 };
 
 // Adicionando gráfico criado em div na tela
@@ -761,7 +764,7 @@ let myChart3 = new Chart(
     config3
 );
 
-setTimeout(() => atualizarGrafico3(id3, dados3, myChart3), 2000);
+setTimeout(() => atualizarGrafico(id, dados, myChart), 2000);
 }
 
 
@@ -774,25 +777,25 @@ function atualizarGrafico3(id3, dados3, myChart3) {
 
 
 
-fetch(`/medidas/tempo-real/ponto${id3}`, { cache: 'no-store' }).then(function (response3) {
-    if (response3.ok) {
-        response3.json().then(function (novoRegistro3) {
+fetch(`/medidas/tempo-real3/${id3}`, { cache: 'no-store' }).then(function (response) {
+    if (response.ok) {
+        response.json().then(function (novoRegistro3) {
 
             obterDadosGrafico3(id3);
             // alertar(novoRegistro, idAquario);
-            console.log(`Dados recebidos: ${JSON.stringify(novoRegistro3)}`);
-            console.log(`Dados atuais do gráfico:`);
-            console.log(dados3);
+            console.log(`Dados recebidos: -- grafico 2 ---- > ${JSON.stringify(novoRegistro3)}`);
+            console.log(`Dados atuais do gráfico 2 :`);
+            console.log(dados2);
 
-            let avisoCaptura3 = document.getElementById(`avisoCaptura${id3}`)
+  
       
 
 
-            if (novoRegistro3[0].videos == dados3.labels[dados3.labels.length - 1]) {
+            if (Number(novoRegistro3[0].videos) == Number(dados3.labels3[Number(dados3.labels.length) - 1])) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
                         console.log("Horário do novo dado capturado:")
-                        console.log(novoRegistro3[0].carnes)
+                        console.log(novoRegistro3[0].video)
                         console.log("Horário do último dado capturado:")
                         console.log(dados3.labels[dados3.labels.length - 1])
                         console.log("---------------------------------------------------------------")
@@ -800,7 +803,7 @@ fetch(`/medidas/tempo-real/ponto${id3}`, { cache: 'no-store' }).then(function (r
                         
 
                         dados3.labels3.shift(); 
-                        dados3.labels3.push(novoRegistro3[0].videos);
+                        dados3.labels3.push(novoRegistro3[0].video);
 
 
                         dados3.datasets[0].data.shift();  // apagar o primeiro de umidade
@@ -836,14 +839,11 @@ fetch(`/medidas/tempo-real/ponto${id3}`, { cache: 'no-store' }).then(function (r
         proximaAtualizacao3 = setTimeout(() => atualizarGrafico3(id3, dados3, myChart3), 2000);
     }
 })
-    .catch(function (error3) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error3.message}`);
+    .catch(function (error2) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error2.message}`);
     });
 
 }
-
-
-
 
 
 
