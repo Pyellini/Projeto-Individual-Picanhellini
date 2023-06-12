@@ -77,7 +77,11 @@ margin-bottom: 7vh;
 }
 
 .caixa2 {
-    background-color: black;
+    background-image: url(../font/thumbnail_6ffd095a-759d-435d-a6a2-fbf050aec188.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    text-align: center;
     width: 70vh;
     height: 77.4vh;
     padding: 10px 12px;
