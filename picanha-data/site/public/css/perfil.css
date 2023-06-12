@@ -91,7 +91,11 @@ a:hover {
     margin-top: 20%;
     width: 40vh;
     height: 60vh;
-    background-color: black;
+    background-image: url(../font/estatisticas.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    text-align: center;
 }
 /* .caixa2{
      margin-left: 20vh;
@@ -103,6 +107,7 @@ a:hover {
     margin-top: 8%;
     margin-left: -50vh;
     font-size: 10vh;
+    
 }
 
 .banner{
@@ -110,7 +115,7 @@ margin-left: 200px;
     display: flex;
 }
 .texto_caixa {
-
+    text-shadow: 1px 1px 20px #000000;
     margin-top: 50vh;
     color: #ffffff;
     font-size: 7vh;

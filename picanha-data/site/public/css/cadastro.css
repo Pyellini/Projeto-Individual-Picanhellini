@@ -78,7 +78,7 @@ margin-bottom: 7vh;
 
 .caixa2 {
     background-image: url(../font/thumbnail_6ffd095a-759d-435d-a6a2-fbf050aec188.jpeg);
-    background-repeat: no-repeat;
+       background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
     text-align: center;
