@@ -30,7 +30,7 @@
                             <a href="./receitas.html" class="a">Receitas</a>
                         </li>
                         <li>
-                            <a href="./calculadora_pi.html" class="a">Quiz</a>
+                            <a href="./calculadora_pi.html" class="a">Combinações</a>
                         </li>
                         <li>
                             <a href="./perfil_user.html" class="a">Perfil</a>
@@ -72,10 +72,11 @@
                 
         
                     <br><br>
+                    <a onclick="likes()" id="Tcarnes">Likes</a>
 
-                    <!-- <div id="Como">COMO ACENDER A CHURRASQUEIRA</div>
+                 <!-- <div id="Como">COMO ACENDER A CHURRASQUEIRA</div> -->
 
-                    <div id="pratos">PRATOS USANDO A CHURRASQUEIRA</div> -->
+                    <!-- <div id="pratos">PRATOS USANDO A CHURRASQUEIRA</div> -->
 
                 </div>
                 <div id="videos">
@@ -97,6 +98,229 @@
     </div>
 </body>
 <script>
+
+
+
+
+
+var id = sessionStorage.ID_USUARIO;
+    // var id2 = sessionStorage.ID_USUARIO;
+    // var id3 = sessionStorage.ID_USUARIO;
+
+    var curtidasPicanha = 0
+    var curtidasCostela = 0
+    var curtidasAcem = 0
+    var curtidasPao = 0
+    var curtidasCupim = 0
+    var curtidasAbacaxi = 0
+
+    function LikePicanha() {
+        curtidasPicanha = 1
+
+        console.log(curtidasPicanha)
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/Curtidaspicanha", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                LikePicanhaServer: curtidasPicanha
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+    }
+
+
+    function LikeCostela() {
+        curtidasCostela = 1
+
+        console.log(curtidasCostela)
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/Curtidascostela", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                LikeCostelaServer: curtidasCostela
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+    }
+
+    function LikeAcem() {
+        curtidasAcem = 1
+
+        console.log(curtidasAcem)
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/Curtidasacem", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                LikeAcemServer: curtidasAcem
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+    }
+
+
+    function LikePao() {
+        curtidasPao = 1
+
+        console.log(curtidasPao)
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/Curtidaspao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                LikePaoServer: curtidasPao
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+    }
+
+
+    function LikeCupim() {
+        curtidasCupim = 1
+
+        console.log(curtidasCupim)
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/Curtidascupim", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                LikeCupimServer: curtidasCupim
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+    }
+
+
+    function LikeAbacaxi() {
+        curtidasAbacaxi = 1
+
+        console.log(curtidasAbacaxi)
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/Curtidasabacaxi", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                LikeAbacaxiServer: curtidasAbacaxi
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var id = sessionStorage.ID_USUARIO;
 
 var pontosPicanha = 0
@@ -171,6 +395,22 @@ videos.innerHTML = `
         });
 
 
+}
+
+function likes(){
+
+    videos.innerHTML=`
+
+    
+
+    <button onclick="LikePicanha()" class="btn_voto">Picanha</button>
+                    <button onclick="LikeCostela()" class="btn_voto">Costela de Boi</button>
+                    <button onclick="LikeAcem()" class="btn_voto">Acem</button>
+                    <button onclick="LikePao()" class="btn_voto">Pão de Alho</button>
+                    <button onclick="LikeCupim()" class="btn_voto">Cupim</button>
+                    <button onclick="LikeAbacaxi()" class="btn_voto">Abacaxi</button>
+
+    `;
 }
 
 
@@ -374,6 +614,32 @@ fetch("/usuarios/ponto", {
         });
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
