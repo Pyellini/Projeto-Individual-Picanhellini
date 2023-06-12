@@ -1,81 +1,208 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
 
-<input/>
-<button>Compare com o meu segredo</button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body>
+    <div class="fonte">
+        <div class="fundoP">
+            <div class="header">
+                <div class="container">
+
+
+
+                    <ul class="navbar">
+                        <li>
+                            <a href="./dash.html" class="aD">Suas estatisticas</a>
+                        </li>
+                        <li>
+                            <a href="./" class="aD">Duvidas</a>
+                        </li>
+
+                        <li>
+                            <a href="./receitas.html" class="a">Receitas</a>
+                        </li>
+                        <li>
+                            <a href="./calculadora_pi.html" class="a">Quiz</a>
+                        </li>
+                        <li>
+                            <a href="./perfil_user.html" class="a">Perfil</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="barra"></div>
+            <button onclick="atualizar()" class="botao"> outra combinação</button>
+            <!-- <button onclick="sorteiaNumeros()" class="botao"><a>Ver suas combinações</a></button> -->
+
+<div id="teste" class="container2">
+            <div id="imagem1" class="foto">
+
+
+
+            </div>
+
+            <div id="imagem2" class="foto">
+
+
+            </div>
+
+            <div id="imagem3" class="foto">
+
+
+            </div>
+            <div id="imagem4" class="foto">
+
+
+            </div>
+            <div id="imagem5" class="foto">
+
+
+            </div>
+            <div id="imagem6" class="foto">
+
+
+            </div>
+
+
+        </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
 
 <script>
-    function sorteia() {
+// var quantidade = 2
+    // var nSro =0
+    // function sorteia() {
 
-       return Math.round(Math.random() * 20);
+    //     return Math.round(Math.random() * 6);
 
-    }
+    // }
 
+    // function sorteador(quantidade){
+
+    //    nSro= Math.round(Math.random() * 6);
+    // }
+    var segredos = [];
     function sorteiaNumeros(quantidade) {
-
-        var segredos = [];
+      
+    
+        teste.innerHTML = ``
 
         var numero = 1;
 
-        while(numero <= quantidade) {
+        while (numero <= quantidade) {
 
-              var numeroAleatorio = sorteia();
-              var achou = false;
+            var numeroAleatorio =   Math.round(Math.random() * 6);
+            var achou = false;
 
-              if (numeroAleatorio !== 0) {
-                     for(var posicao = 0; posicao < segredos.length; posicao++) {
+            if (numeroAleatorio !== 0) {
+                for (var posicao = 0; posicao < segredos.length; posicao++) {
 
-                           if(segredos[posicao] == numeroAleatorio){
-                                achou = true;
-                                break;
-                           }
+                    if (segredos[posicao] == numeroAleatorio) {
+                        achou = true;
+                        break;
+                    }
 
-                     }
+                }
 
-                     if (achou == false) {
-                           segredos.push(numeroAleatorio);
-                           numero++;
-                     }
-              }
+                if (achou == false) {
+                    segredos.push(numeroAleatorio);
+                    numero++;
+                }
+            }
 
         }
 
-        return segredos;
+  
 
-    }
 
-    var segredos = sorteiaNumeros(5);
+        for (var contador = 0; contador < segredos.length; contador++) {
+            if (segredos[contador] == 1) {
+                teste.innerHTML += `<img  class="imagemc" src="https://img.freepik.com/fotos-premium/picanha-tradicional-churrasco-brasileiro_70216-8006.jpg" >
+`;
+            } else if (segredos[contador] == 2) {
+
+                teste.innerHTML += `<img  class="imagemc" src="https://www.paodealhobhecia.com.br/site/conteudo/imagens/12.jpg" >
+`;
+
+            } else if (segredos[contador] == 3) {
+
+                teste.innerHTML += `<img  class="imagemc" src="https://conteudo.imguol.com.br/c/entretenimento/19/2020/11/09/costela-de-boi-1604926430242_v2_615x300.jpg" >
+`;
+
+            } else if (segredos[contador] == 4) {
+
+                teste.innerHTML += `<img  class="imagemc" src="https://www.auroraalimentos.com.br/wp-content/uploads/2022/05/094_2_22_AURORA_LINQ_FINI_APIM_147-scaled.jpg" >
+`;
+
+            } else if (segredos[contador] == 5) {
+
+                teste.innerHTML += `<img   class="imagemc" src="https://www.receiteria.com.br/wp-content/uploads/espetinho-de-coracao-de-frango.png" >
+`;
+
+            } else if (segredos[contador] == 6) {
+
+                teste.innerHTML += `<img  class="imagemc" src="https://www.receiteria.com.br/wp-content/uploads/receitas-de-farofa-para-churrasco-1.jpg" >
+`;
+
+            }
+
+        }
+
+        }
+
+    var segredos = sorteiaNumeros(2);
 
     console.log(segredos);
 
-    var input = document.querySelector("input");
-    input.focus();
 
-    function verifica() {
-
-       var achou = false;
-
-       for(var posicao = 0; posicao < segredos.length; posicao++) {
-
-              if(input.value == segredos[posicao]) {
-
-                     alert("Você ACERTOU!");
-                     achou = true;
-                     break;
-              } 
-       }
-
-       if(achou == false) {
-
-              alert("Você ERROU!");
-       }
-
-       input.value = "";
-       input.focus();
+    function atualizar(){
+        segredos = []
+        sorteiaNumeros(2);
 
     }
+    // var input = document.querySelector("input");
 
-    var button = document.querySelector("button");
 
-    button.onclick = verifica;
+    // function verifica() {
+
+    //     var achou = false;
+
+    //     for (var posicao = 0; posicao < segredos.length; posicao++) {
+
+    //         if (input.value == segredos[posicao]) {
+
+    //             alert("Você ACERTOU!");
+    //             achou = true;
+    //             break;
+    //         }
+    //     }
+
+    //     if (achou == false) {
+
+    //         alert("Você ERROU!");
+    //     }
+
+    // }
+
+
+    // button.onclick = verifica;
+
+
+
 
 </script>

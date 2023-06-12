@@ -16,14 +16,14 @@ body{
   }
 
   .barra{
-    border-top:rgb(255, 255, 255) solid 3px;
+    border-top:rgb(255, 255, 255) solid 0.6vh;
     width: 90%;
     margin-left: 5%;
-    margin-bottom: 100px;
+    margin-bottom: 5vh
   }
 
   .header a {
-    font-size:35px;
+    font-size:4vh;
     text-decoration: none;
     color: #ffffff;
     transition: 0.3s;
@@ -33,95 +33,97 @@ body{
 
   a:hover {
     opacity: 0.7;
-    font-size: 30px;
+    font-size: 4.5vh;
   }
   
-  .paginaSelecionada {
+  /* .paginaSelecionada {
     font-weight: 800;
-  }
+  } */
   
+
   .navbar {
-    width: 500px;
+    width:  40vh;
+    margin-right: 10vh;
     display: flex;
-    margin-right: 200px;
+    /* margin-left: vh; */
     justify-content: space-between;
     list-style: none;
     color: #ffffff;
-    
-  }
-  
+    /* padding-right: 10vh; */
+
+}
   #name{
-    margin-left: 150px;
-    margin-bottom: 12px;
+    margin-left: 10vh;
+    margin-bottom: 2vh;
   }  
   .fundol{
     background: url(https://bloglazereestilo.files.wordpress.com/2015/10/giphy-3.gif);
     width: 100%;
     background-size: cover;
-    height: 1200;
+    height: 100vh;
     
   }
 
   .caixa{
 
     background-color: rgb(253, 253, 253);
-    height: 720px;
-    width: 700px;
-    margin-left: 600px;
+    height: 80vh;
+    width: 100vh;
+    margin-left: 40vh;
     border-radius: 15px;
     
   }
   .campo {
-margin-left: 35px;
-    width:600px;
-    height: 39px;
-    padding: 10px 12px;
+margin-left: 3.4vh;
+    width:80vh;
+    height: 1vh;
+    padding: 4vh 6vh;
     border-radius: 10px;
-    margin-right: 50px;
+    margin-right: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top: 1vh;
    font-size: large;
 
 
 }
 .nome{
   margin: flex;
-   margin-top: 50px;
-font-size: 40px;
-padding-right: 507px;
+   margin-top: 5vh;
+font-size: 6vh;
+padding-right: 74vh;
 }
 .nomeT{
   margin: flex;
-   margin-top: 50px;
-font-size: 40px;
-padding-right: 310px;
+   margin-top: 5vh;
+font-size: 6vh;
+padding-right: 45vh;
 }
 
-.nomeU{
+/* .nomeU{
   margin: flex;
    margin-top: 50px;
 font-size: 40px;
 padding-right: 310px;
-}
+} */
 h2{
   font-family: HammersmithOne-Regular;
-  margin-top: 20px;
-  font-size: 60px;
+  margin-top: 2vh;
+  font-size: 8vh;
 }
 .btn_entrar,.btn_criar {
-margin-left: 220px;
+margin-left: 24vh;
   background-color:#915417;
   color: rgb(223, 223, 223);
   font-weight: bold;
   font-family: HammersmithOne-Regular;
-  width: 250px;
-  height: 70px;
+  width: 50vh;
+  height: 9vh;
   border-radius: 5px;
   border: none;
-  font-size: 30px;
+  font-size: 4vh;
   display: flex;
   justify-content: center;
   align-items: center;
